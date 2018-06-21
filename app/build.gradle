@@ -38,20 +38,22 @@ android {
 //        pickFirst 'META-INF/main.kotlin_module'
 //    }
 
-//    sourceSets {
-//        main.java.srcDirs += 'src/main/kotlin'
-//    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
+
+    kapt {
+        generateStubs = true
+        mapDiagnosticLocations = true
+    }
 }
 
-//kapt {
-//    generateStubs = true
-//    mapDiagnosticLocations = true
-//}
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
